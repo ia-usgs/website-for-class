@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('../../db_connection.php'); // Corrected path to go up two levels to root
+include('../../db_connection.php'); 
 
 // Redirect if not logged in
 if (!isset($_SESSION['username'])) {
-    header('Location: ../../login.php'); // Corrected path to go up two levels to root
+    header('Location: ../../login.php'); 
     exit();
 }
 
@@ -38,18 +38,18 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Manage Vehicle Models</title>
-    <link rel="stylesheet" href="../../style.css"> <!-- Corrected path for stylesheet -->
+    <link rel="stylesheet" href="../../style.css"> 
 </head>
 <body>
     <header>
-        <!-- Header content -->
-        National University Car Dealership
+    <h1>National University Car Dealership</h1>
+        <h2>Vehicle Inventory Management System</h2>
+        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
-    
-    <?php include('../navigation/nav_admin.php'); ?> <!-- Corrected path for navigation -->
+    <!-- Nav area -->
+    <?php include('../navigation/nav_admin.php'); ?> 
     
     <main>
-        <!-- Main content -->
         <form action="manage_models.php" method="post">
             <label for="make_id">Select Vehicle Make:</label>
             <select name="make_id" id="make_id">
@@ -78,7 +78,7 @@ $conn->close();
             </table>
         <?php endif; ?>
     </main>
-    
-    <?php include('../navigation/footer.php'); ?> <!-- Corrected path for footer -->
+    <!-- Footer area -->
+    <?php include('../navigation/footer.php'); ?> 
 </body>
 </html>
