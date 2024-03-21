@@ -1,3 +1,5 @@
+#this quick python script was made to create the proper database queries based on a list that was scraped off the internet.
+
 make_ids = {
     'Jeep': 1,
     'Nissan': 2,
