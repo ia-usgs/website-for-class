@@ -1,12 +1,11 @@
 <?php
 session_start();
 
-// Enable error reporting for debugging (remove these lines on production)
+// Enable error reporting for debugging 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Include database connection file from the root directory
-include('../db_connection.php'); // Adjusted path to go up one level to the root
+include('../db_connection.php'); 
 
 // Check if the form data is sent via POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Prevent SQL injection by using prepared statements
-    $stmt = $conn->prepare("SELECT user_id, username, password FROM Users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT user_id, username, password, is_admin FROM Users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -27,12 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Password is correct, create session variables
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['is_admin'] = $user['is_admin'];
 
             // Close the database connection before redirection
             $conn->close();
 
-            // Redirect to the dashboard page, assuming it's in the same directory
-            header("Location: dashboard.php");
+            // Redirect the user based on their admin status
+            if ($user['is_admin']) {
+                header("Location: admin_page.php");
+            } else {
+                header("Location: dashboard.php");
+            }
             exit();
         } else {
             // If password doesn't match, redirect with an error
