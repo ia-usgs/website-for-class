@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db_connection.php');
+include('../db_connection.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
@@ -27,17 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_make'])) {
 <head>
     <meta charset="UTF-8">
     <title>Add Vehicle Make</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
         <div class="banner">
             <h1>National University Car Dealership</h1>
             <h2>Vehicle Inventory Management System</h2>
+            <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
         </div>
     </header>
     
-    <?php include('nav.php'); ?>
+    <?php include('../navigation/nav.php'); ?>
 
     <main>
         <h2>Add Vehicle Make</h2>
@@ -48,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_make'])) {
         </form>
     </main>
     
-    <?php include('footer.php'); ?>
+    <?php include('../navigation/footer.php'); ?>
 </body>
+
 </html>
