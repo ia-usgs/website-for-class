@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('db_connection.php');
+include('../db_connection.php');
 
 // Redirect if not logged in
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    header('Location: ../pages/login.php');
     exit();
 }
 
@@ -55,7 +55,6 @@ if ($userId) {
     $stmt->close();
 }
 
-// Continue to close the database connection if necessary
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +62,7 @@ if ($userId) {
 <head>
     <meta charset="UTF-8">
     <title>Edit User</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
@@ -72,13 +71,7 @@ if ($userId) {
         <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
     
-    <nav>
-        <ul>
-            <li><a href="logout.php">Logout</a></li>
-            <li><a href="manage_users.php">Manage Users</a></li>
-            <li><a href="admin_page.php">Admin Page</a></li>
-        </ul>
-    </nav>
+    <<?php include('../navigation/nav_edit_user.php'); ?>
     
     <main>
         <div class="user-form">
@@ -109,9 +102,7 @@ if ($userId) {
             <?php endif; ?>
         </div>
     </main>
-    
-    <footer>
-        <p>Copyright & Designed by Peter Nguyen 2019 | <a href="mailto:feedback@example.com">Click Here to Send Feedback</a></p>
-    </footer>
+    <!-- Footer area -->
+    <?php include('../navigation/footer.php'); ?> 
 </body>
 </html>
