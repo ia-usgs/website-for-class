@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     $stmt->execute();
     $stmt->close();
     
-    // Redirect or handle next steps
 }
 
 $conn->close();
@@ -41,17 +40,11 @@ $conn->close();
 </head>
 <body>
 <header>
-        <!-- Header content -->
-        National University Car Dealership
+<h1>National University Car Dealership</h1>
+        <h2>Vehicle Inventory Management System</h2>
+        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
-    <nav>
-    <ul>
-        <li><a href="logout.php">Logout</a></li>
-        <li><a href="new_model.php">New Model</a></li>
-        <li><a href="manage_vehicles.php">Manage Vehicles</a></li>
-        <li><a href="admin_page.php">Admin Page</a></li>
-    </ul>
-</nav>
+    <?php include('../navigation/nav_models.php'); ?>
     <main>
         <h2>Edit Vehicle Model</h2>
         <?php if ($model): ?>
@@ -68,9 +61,6 @@ $conn->close();
         <p>Model not found.</p>
         <?php endif; ?>
     </main>
-    <footer>
-        <!-- Your footer content -->
-        <p>Copyright & Designed by Irvin Avitia 2024 | <a href="mailto:feedback@example.com">Click Here to Send Feedback</a></p>
-    </footer>
+    <?php include('../navigation/footer.php'); ?>
 </body>
 </html>
