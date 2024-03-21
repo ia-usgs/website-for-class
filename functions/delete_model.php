@@ -60,9 +60,10 @@ $conn->close();
     <header>
         <h1>National University Car Dealership</h1>
         <h2>Vehicle Inventory Management System</h2>
+        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
-    
-    <?php include('nav_models.php'); ?> <!-- Replace the existing nav with the include -->
+    <!-- Nav area -->
+    <?php include('nav_models.php'); ?> 
     
     <main>
         <h2>Delete Vehicle Model</h2>
@@ -76,7 +77,7 @@ $conn->close();
             <p>Model not found.</p>
         <?php endif; ?>
     </main>
-    
-    <?php include('footer.php'); ?> <!-- Replace the existing footer with the include -->
+    <!-- Footer area -->
+    <?php include('footer.php'); ?> 
 </body>
 </html>
