@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db_connection.php');
+include('../db_connection.php');
 
 // Redirect if not logged in
 if (!isset($_SESSION['username'])) {
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
     $conn->close();
     
-    header('Location: manage_users.php');
+    header('Location: ../functions/manage_users.php');
     exit();
 }
 ?>
@@ -40,19 +40,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Add New User</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
         <h1>National University Car Dealership</h1>
         <h2>Vehicle Inventory Management System</h2>
+        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
     
-    <?php include('nav_manage.php'); ?>
+    <?php include('../navigation/nav_manage.php'); ?>
     
     <main>
         <div class="user-form">
-            <form action="add_user.php" method="post">
+            <form action="../add/add_user.php" method="post">
                 <label for="username">User Name:</label>
                 <input type="text" id="username" name="username" required>
                 
@@ -76,6 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </main>
     
-    <?php include('footer.php'); ?>
+    <?php include('../navigation/footer.php'); ?>
 </body>
 </html>
