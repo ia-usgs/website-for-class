@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('db_connection.php');
+include('../db_connection.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    header('Location: ../pages/login.php');
     exit();
 }
 
@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
     $stmt->execute();
 
     if($stmt->error) {
-        // Handle error - perhaps redirect to an error page
+        // Handle error, may place error page here later
         echo "Error: " . $stmt->error;
         exit;
     }
