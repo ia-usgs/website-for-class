@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db_connection.php');
+include('../db_connection.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
@@ -54,17 +54,19 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Delete Vehicle Make</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
         <h1>National University Car Dealership</h1>
         <h2>Vehicle Inventory Management System</h2>
+        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
-    
-    <?php include('nav.php'); ?> <!-- Include the navigation bar -->
+    <!-- = navigation bar spot-->
+    <?php include('../navigation/nav.php'); ?> 
     
     <main>
+        
         <h2>Delete Vehicle Make</h2>
         <?php if ($make): ?>
             <p>Are you sure you want to permanently delete <?php echo htmlspecialchars($make['name']); ?>?</p>
@@ -76,7 +78,7 @@ $conn->close();
             <p>Make not found.</p>
         <?php endif; ?>
     </main>
-    
-    <?php include('footer.php'); ?> <!-- Include the footer -->
+    <!-- Footer area -->
+    <?php include('../navigation/footer.php'); ?> 
 </body>
 </html>
