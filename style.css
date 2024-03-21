@@ -1,34 +1,32 @@
-/* General Styles */
 body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Header styles */
 header {
-    background-image: url('/path-to-header-image.jpg'); /* Update with the path to your actual header image */
+    
     background-size: cover;
     padding: 20px;
     text-align: center;
-    color: rgb(0, 0, 0); /* Or any color that contrasts well with your banner image */
+    color: rgb(0, 0, 0); 
 }
 
-/* Navigation styles */
+
 nav {
-    background-color: #333; /* Or any color that suits the design */
+    background-color: #333; 
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 150px; /* Adjust width as needed */
+    width: 150px; 
     padding: 10px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0; /* Reset the margin */
+    margin: 0; 
 }
 
 nav li {
@@ -47,14 +45,24 @@ nav a:hover {
     color: black;
 }
 
-/* Main Content styles */
+
 main {
-    margin-left: 220px; /* This should be equal to or greater than the width of the navigation bar */
+    margin-left: 220px; 
     padding: 20px;
-    min-height: calc(100vh - 40px); /* Adjust height considering header and footer */
+    min-height: calc(100vh - 40px); 
+    width: 80%; 
+    margin: center; 
+    padding: 20px;
+    text-align: center; 
 }
 
-/* Footer styles */
+.main-content {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 footer {
     background-color: #333;
     color: white;
@@ -75,7 +83,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Styles for login form */
+
 .login-form {
     max-width: 300px;
     margin: 50px auto;
@@ -109,7 +117,7 @@ footer a:hover {
     cursor: pointer;
 }
 
-/* Styles for error messages if used */
+
 .error {
     color: red;
     padding: 10px;
@@ -118,26 +126,20 @@ footer a:hover {
     border-radius: 3px;
 }
 
-main {
-    width: 80%; /* Adjust the width as needed */
-    margin: center; /* Centers the main content */
-    padding: 20px;
-    text-align: center; /* Center text alignment */
-}
 
 table {
-    width: 100%; /* Table takes the full width of its container */
-    border-collapse: collapse; /* Collapses the border */
+    width: 100%; 
+    border-collapse: collapse; 
 }
 
 th, td {
-    border: 1px solid #ddd; /* Adds border to table headers and cells */
-    text-align: center; /* Align text to the left */
-    padding: 8px; /* Add some padding for spacing */
+    border: 1px solid #ddd; 
+    text-align: center; 
+    padding: 8px; 
 }
 
 th {
-    background-color: #f2f2f2; /* Add a background color to table headers */
+    background-color: #f2f2f2; 
 }
 
 .user-form {
@@ -182,9 +184,9 @@ th {
     margin-top: 5px;
 }
 
-/* Add this to ensure the footer stays at the bottom */
+
 main {
-    min-height: calc(100vh - 160px); /* Adjust based on your header and footer size */
+    min-height: calc(100vh - 160px); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -202,7 +204,7 @@ p {
 }
 
 .category-container img {
-    width: 100px; /* Adjust the size as necessary */
+    width: 100px; 
     height: auto;
     margin: 10px;
     cursor: pointer;
@@ -210,8 +212,7 @@ p {
 
 .container {
     display: flex;
-    min-height: calc(100vh - 65px); /* Adjust based on the height of your header/footer */
+    min-height: calc(100vh - 65px); 
 }
 
 
-/* Other styles as needed */
