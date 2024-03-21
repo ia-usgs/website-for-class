@@ -1,9 +1,9 @@
 <?php
-session_start(); // This should be the first line to ensure session variable access
+session_start(); 
 
 // Check if the user is not logged in, then redirect to login page
 if (!isset($_SESSION['username'])) {
-    header('Location: index.php'); // Assuming index.php is in the root, adjust if it's elsewhere
+    header('Location: index.php'); 
     exit();
 }
 ?>
@@ -13,23 +13,28 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Vehicle Inventory Management System</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Adjusted path to root directory -->
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <header>
         <div class="banner">
             <h1>National University Car Dealership</h1>
             <h2>Vehicle Inventory Management System</h2>
+            <h2>Dashboard</h2>
+            <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
         </div>
     </header>
-
-    <?php include('../navigation/nav_dashboard.php'); ?> <!-- Corrected path for the navigation bar -->
+    <!-- Nav area -->
+    <?php include('../navigation/nav_dashboard.php'); ?> 
 
     <main class="main-content">
-        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
-        <!-- Main content area where dynamic content will be loaded based on navigation -->
-    </main>
+        
+        
 
-    <?php include('../navigation/footer.php'); ?> <!-- Corrected path for the footer -->
+        <img id="carrito" src="/banner.jpg" atl="Car Dealership" >
+
+    </main>
+    <!-- Footer area -->
+    <?php include('../navigation/footer.php'); ?> 
 </body>
 </html>
