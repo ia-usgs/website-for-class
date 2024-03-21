@@ -16,27 +16,31 @@ include('../db_connection.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page - Vehicle Inventory Management System</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Make sure this path is correct based on your project's structure -->
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <header>
         <div class="banner">
             <h1>National University Car Dealership</h1>
             <h2>Vehicle Inventory Management System</h2>
+            <h2>Admin Dashboard</h2>
+            <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
         </div>
     </header>
 
-    <!-- Include the admin-specific navigation bar -->
+    <!-- Nav Area-->
     <?php include('../navigation/nav_admin.php'); ?>
 
     <main class="main-content">
-        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
+        
+        <img id="carrito" src="/banner2.jpg" atl="Car Dealership" >
         <div class="category-container">
-            <!-- Categories and images go here -->
+            <!-- For a ny future stuff I need -->
+            
         </div>
     </main>
 
-    <!-- Include the footer -->
+    <!-- Footer area -->
     <?php include('../navigation/footer.php'); ?>
 
 </body>
