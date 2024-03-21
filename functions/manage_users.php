@@ -1,16 +1,16 @@
 <?php
 session_start();
-include('../db_connection.php'); // Adjust path to go up one level to root
+include('../db_connection.php'); 
 
-// Security check: redirect to the login page if the user is not logged in
+// redirect to the login page if the user is not logged in
 if (!isset($_SESSION['username'])) {
-    header('Location: ../login.php'); // Adjust path to login.php in root
+    header('Location: ../pages/login.php'); 
     exit();
 }
 
 // Retrieve current users to display
-$users = []; // Placeholder for users array
-$sql = "SELECT * FROM users ORDER BY user_id ASC"; // SQL query
+$users = []; 
+$sql = "SELECT * FROM users ORDER BY user_id ASC"; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -18,22 +18,23 @@ if ($result->num_rows > 0) {
         $users[] = $row;
     }
 }
-$conn->close(); // Close database connection
+$conn->close(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Manage Users</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Adjust path for stylesheet -->
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <header>
         <h1>National University Car Dealership</h1>
         <h2>Vehicle Inventory Management System</h2>
+        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
-    
-    <?php include('../navigation/nav_admin.php'); ?> <!-- Adjust include path for admin navigation -->
+    <!-- Nav area -->
+    <?php include('../navigation/nav_manage.php'); ?> 
     
     <main>
         <h3>Registered Users</h3>
@@ -65,7 +66,7 @@ $conn->close(); // Close database connection
 
         </table>
     </main>
-    
-    <?php include('../navigation/footer.php'); ?> <!-- Adjust path for footer -->
+    <!-- Footer area -->
+    <?php include('../navigation/footer.php'); ?> 
 </body>
 </html>
