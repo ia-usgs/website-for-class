@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db_connection.php');
+include('../db_connection.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
@@ -49,21 +49,15 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Edit Vehicle Make</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
         <h1>National University Car Dealership</h1>
         <h2>Vehicle Inventory Management System</h2>
-        <nav>
-            <!-- Navigation -->
-            <a href="logout.php">Logout</a>
-            <a href="new_make.php">New Make</a>
-            <a href="manage_vehicles.php">Manage Vehicles</a>
-            <a href="admin_page.php">Admin Page</a>
-        </nav>
+        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
-    
+    <?php include('../navigation/nav.php'); ?>
     <main>
         <?php if ($make): ?>
             <h2>Edit Vehicle Make</h2>
@@ -77,8 +71,6 @@ $conn->close();
         <?php endif; ?>
     </main>
     
-    <footer>
-        <p>Copyright & Designed by Peter Nguyen 2019 | <a href="mailto:feedback@example.com">Click Here to Send Feedback</a></p>
-    </footer>
+    <?php include('../navigation/footer.php'); ?>
 </body>
 </html>
