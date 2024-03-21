@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('../db_connection.php'); // Correct path from the 'functions' directory
+include('../db_connection.php'); 
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    header('Location: ../index.php'); // Redirect to the homepage at the root directory
+    header('Location: ../index.php'); 
     exit();
 }
 
@@ -21,14 +21,16 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Vehicle Makes</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Correct path from 'functions' directory -->
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
     <header>
         <h1>National University Car Dealership</h1>
         <h2>Vehicle Inventory Management System</h2>
+        <p>You are currently logged in as: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </header>
-    <?php include('../navigation/nav_admin.php'); ?> <!-- Correct include from 'functions' directory -->
+    <!-- Nav area -->
+    <?php include('../navigation/nav_manage_vehicles.php'); ?> 
     <main>
         <h2>Vehicle Makes</h2>
         <table>
@@ -46,6 +48,7 @@ $conn->close();
             <?php endforeach; ?>
         </table>
     </main>
-    <?php include('../navigation/footer.php'); ?> <!-- Correct include from 'functions' directory -->
+    <!--Footer area -->
+    <?php include('../navigation/footer.php'); ?> 
 </body>
 </html>
