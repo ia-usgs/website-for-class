@@ -1,6 +1,6 @@
 <?php
 // Database credentials
-$host = 'localhost'; // database host
+$host = '127.0.0.1'; // database host
 $db_user = 'root'; // database username
 $db_password = ''; // database password
 $db_name = 'used_car_database'; // database name
