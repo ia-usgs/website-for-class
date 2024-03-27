@@ -22,7 +22,9 @@
     <main>
         <div class="login-form">
             <?php if (isset($_GET['error'])): ?>
-                <p class="error"><?php echo htmlspecialchars($_GET['error']); ?></p>
+            <!-- Redirect the user to the error page -->
+            <?php header("Location: error.php?error=" . urlencode($_GET['error'])); ?>
+            <?php exit(); ?>
             <?php endif; ?>
 
             <h3>Login</h3>
