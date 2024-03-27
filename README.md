@@ -16,6 +16,6 @@ This is a website for managing the inventory of a car dealership which was origi
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/ia-usgs/website-for-class.git`
-2. Create a MySQL database and import the `database.sql` file to create the necessary tables.
+2. Create a MySQL database and import the `used_car_database.sql` file to create the necessary tables.
 3. Configure the database connection settings in the `db_connection.php` file.
 4. Set up a web server (e.g., Apache) to host the website files.
