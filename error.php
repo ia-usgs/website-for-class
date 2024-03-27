@@ -1,9 +1,17 @@
+<?php
+session_start(); 
+
+// Retrieve the error message from the query parameter
+$error = isset($_GET['error']) ? $_GET['error'] : '';
+$imageUrl = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.behance.net%2Fsearch%2Fprojects%2Fmewtwo&psig=AOvVaw3-4O8NnmTEortxisyr85AF&ust=1711630530734000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMDpq-K-lIUDFQAAAAAdAAAAABAD'; // pic URL
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National University Car Dealership - Vehicle Inventory Management System</title>
+    <title>Error - National University Car Dealership</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,27 +20,13 @@
         <h2>Vehicle Inventory Management System</h2>
     </header>
     
-    <nav>
-        <ul>
-            <!-- Did not make a seperate php file since I only use this nav links once-->
-            <li><a href="index.php">Home</a></li>
-        </ul>
-    </nav>
-    
     <main>
-        <div class="login-form">
-            <?php if (isset($_GET['error'])): ?>
-            <!-- Redirect the user to the error page -->
-            <?php header("Location: error.php?error=" . urlencode($_GET['error'])); ?>
-            <?php exit(); ?>
-            <?php endif; ?>
-
-            <h3>Login</h3>
-            <form action="pages/login.php" method="post">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
+        <div class="error-page">
+            <img src="<?php echo htmlspecialchars($imageUrl); ?>" alt="Error Image">
+            <h3>Oops! Something went wrong.</h3>
+            <h3>Check your login information.</h3>
+            <p><?php echo htmlspecialchars($error); ?></p>
+            <a href="index.php">Return to Homepage</a>
         </div>
     </main>
     
