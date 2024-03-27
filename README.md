@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a website for managing the inventory of a car dealership. It allows users to view and search for available vehicles, add and remove vehicles from the inventory, and perform other inventory-related tasks. The website is built using PHP, HTML, CSS, and a MySQL database.
+This is a website for managing the inventory of a car dealership which was originally created as an assigment for my class. It allows users to view and search for available vehicles, add and remove vehicles from the inventory, and perform other inventory-related tasks. The website is built using PHP, HTML, CSS, and a MySQL database.
 
 ## Features
 
