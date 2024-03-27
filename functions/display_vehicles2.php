@@ -43,7 +43,7 @@ $conn->close();
             <tbody>
                 <?php foreach ($makes as $make): ?>
                 <tr>
-                    <td><a href="models.php?make=<?php echo urlencode($make['name']); ?>"><?php echo htmlspecialchars($make['name']); ?></a></td>
+                    <td><a href="models2.php?make=<?php echo urlencode($make['name']); ?>"><?php echo htmlspecialchars($make['name']); ?></a></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
