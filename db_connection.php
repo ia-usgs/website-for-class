@@ -1,11 +1,11 @@
 <?php
 // Database credentials
-//$host = '172.30.58.67:3306'; // database host
-$host = '172.30.52.25:3306';
+$host = '172.30.58.67:3306'; // database host
+//$host = '172.30.52.25:3306';
 $db_user = 'irvin'; // database username
 $db_password = 'kali'; // database password
-//$db_name = 'used_car_database'; // database name
-$db_name = 'used_car_database2';
+$db_name = 'used_car_database'; // database name
+//$db_name = 'used_car_database2';
 // Create a new database connection instance
 $conn = new mysqli($host, $db_user, $db_password, $db_name);
 
